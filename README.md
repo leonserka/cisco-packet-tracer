@@ -79,7 +79,7 @@ cisco-packet-tracer/
 
 ---
 
-##🚀 How to Run the Simulations
+## 🚀 How to Run the Simulations
 1️⃣ **Install Cisco Packet Tracer** Ensure you have Cisco Packet Tracer installed (Version 8.x recommended).
 
 Download from [Cisco Networking Academy (login required).](https://www.netacad.com/courses/packet-tracer.)
@@ -94,17 +94,17 @@ Check the "**Completion**" tab (if applicable) to see the scoring for the activi
 
 ---
 
-##🔧 Final Project – Defense Task
+## 🔧 Final Project – Defense Task
 **Project: Enterprise Network Design for "Dijamant" Company** Authors: Leon Serka & Kliškinić
 
 This group project simulates a 3-story office building network with advanced requirements. It integrates multiple technologies into a single, scalable topology.
 
-##🏢 Network Scenario
+## 🏢 Network Scenario
 - **Location**: Varaždin, 3-floor building.
 - **Hardware**: 1 Core Layer 3 Switch, 3 Access Layer Switches (one per floor), 1 ISP Router.
 - **Departments**: Finance, Service, Marketing, Projects.
 
-##⚙️ Key Configurations implemented:
+## ⚙️ Key Configurations implemented:
 
 | Feature | Description |
 |------------|-------------|
@@ -116,7 +116,7 @@ This group project simulates a 3-story office building network with advanced req
 | **Servers** | Static IP assignment for VLAN 50 (Server Farm) |
 ---
 
-##🎯 Learning Objectives
+## 🎯 Learning Objectives
 - Understand the OSI and TCP/IP models practically
 - Master IOS command-line interface (CLI) navigation
 - Design scalable and secure network architectures
@@ -125,7 +125,7 @@ This group project simulates a 3-story office building network with advanced req
 
 ---
 
-##🧠 Technologies Used
+## 🧠 Technologies Used
 - 🖥️ Cisco Packet Tracer 8.x - ⚙️ Cisco IOS (Internetwork Operating System)
 - 🔌 Networking Protocols (IPv4, OSPF, RIP, DHCP, DNS, HTTP) 
 
