@@ -1,0 +1,198 @@
+!
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SW_CORE
+!
+!
+no profinet
+enable secret 5 $1$mERr$faRgEIrrHniPs906VakkB.
+!
+!
+ip dhcp excluded-address 10.58.72.1
+ip dhcp excluded-address 10.58.73.1
+ip dhcp excluded-address 10.58.73.33
+ip dhcp excluded-address 10.58.73.129
+!
+ip dhcp pool VLAN10
+ network 10.58.72.0 255.255.255.128
+ default-router 10.58.72.1
+ dns-server 8.8.8.8
+ip dhcp pool VLAN20
+ network 10.58.73.0 255.255.255.224
+ default-router 10.58.73.1
+ dns-server 8.8.8.8
+ip dhcp pool VLAN30
+ network 10.58.73.32 255.255.255.224
+ default-router 10.58.73.33
+ dns-server 8.8.8.8
+ip dhcp pool VLAN40
+ network 10.58.73.128 255.255.255.128
+ default-router 10.58.73.129
+ dns-server 8.8.8.8
+!
+!
+ip routing
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/1
+ description Servers_Access
+ switchport access vlan 50
+ switchport mode access
+!
+interface FastEthernet0/2
+ description Servers_Access
+ switchport access vlan 50
+ switchport mode access
+!
+interface FastEthernet0/3
+ description Servers_Access
+ switchport access vlan 50
+ switchport mode access
+!
+interface FastEthernet0/4
+ description Servers_Access
+ switchport access vlan 50
+ switchport mode access
+!
+interface FastEthernet0/5
+ description Servers_Access
+ switchport access vlan 50
+ switchport mode access
+!
+interface FastEthernet0/6
+ description Trunk_to_Floor1
+ switchport trunk allowed vlan 1,10,20,30,40,50,100
+!
+interface FastEthernet0/7
+ description Trunk_to_Floor2
+ switchport trunk allowed vlan 1,10,20,30,40,50,100
+!
+interface FastEthernet0/8
+ description Trunk_to_Floor3
+ switchport trunk allowed vlan 1,10,20,30,40,50,100
+!
+interface FastEthernet0/9
+ description Link_to_ISP
+ switchport access vlan 100
+ switchport mode access
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ description Management_VLAN
+ ip address 10.58.73.81 255.255.255.248
+!
+interface Vlan10
+ description Finance_VLAN
+ mac-address 0010.119d.4701
+ ip address 10.58.72.1 255.255.255.128
+!
+interface Vlan20
+ description Service_VLAN
+ mac-address 0010.119d.4702
+ ip address 10.58.73.1 255.255.255.224
+!
+interface Vlan30
+ description Marketing_VLAN
+ mac-address 0010.119d.4703
+ ip address 10.58.73.33 255.255.255.224
+!
+interface Vlan40
+ description Projects_VLAN
+ mac-address 0010.119d.4704
+ ip address 10.58.73.129 255.255.255.128
+!
+interface Vlan50
+ description Servers_VLAN
+ mac-address 0010.119d.4705
+ ip address 10.58.73.65 255.255.255.248
+!
+interface Vlan100
+ description ISP_Link_VLAN
+ mac-address 0010.119d.4706
+ ip address 10.58.74.9 255.255.255.252
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 10.58.74.10 
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ password glavni
+!
+line aux 0
+!
+line vty 0 4
+ password glavni
+ login
+line vty 5 15
+ password glavni
+ login
+!
+!
+!
+!
+end
+

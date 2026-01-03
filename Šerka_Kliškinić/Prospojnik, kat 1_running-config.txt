@@ -1,0 +1,127 @@
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname SW_FLOOR1
+!
+enable secret 5 $1$mERr$pnm2GIlCrjMY0PM2GMsQT/
+!
+!
+!
+!
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ description OF_01
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/2
+ description OF_02
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/3
+ description OF_03
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/4
+ description OF_04
+ switchport access vlan 10
+ switchport mode access
+!
+interface FastEthernet0/5
+ description OS_01
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/6
+ description OS_02
+ switchport access vlan 20
+ switchport mode access
+!
+interface FastEthernet0/7
+ description OM_01
+ switchport access vlan 30
+ switchport mode access
+!
+interface FastEthernet0/8
+ description OM_02
+ switchport access vlan 30
+ switchport mode access
+!
+interface FastEthernet0/9
+ description OP_01
+ switchport access vlan 40
+ switchport mode access
+!
+interface FastEthernet0/10
+ description OP_02
+ switchport access vlan 40
+ switchport mode access
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+ description Trunk_to_SW_CORE
+ switchport trunk allowed vlan 1,10,20,30,40,50,100
+ switchport mode trunk
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ description Management_IP
+ ip address 10.58.73.82 255.255.255.248
+!
+ip default-gateway 10.58.73.81
+!
+!
+!
+!
+line con 0
+ password kat1
+!
+line vty 0 4
+ password kat1
+ login
+line vty 5 15
+ password kat1
+ login
+!
+!
+!
+!
+end
+
